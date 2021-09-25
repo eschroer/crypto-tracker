@@ -1,0 +1,55 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    position: sticky;
+}
+
+.header-row {
+    display: flex;
+    flex-direction: row;
+    justify-items: start;
+    align-items: center;
+    height: 80px;
+    border-bottom: 1px solid #d7d7d7;
+    width: 900px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 24px;
+    min-width: 300px;
+    font-size: 16px;
+    width: 150px;
+}
+
+.header-symbol {
+    width: 110px;
+    
+}
+
+.header-data {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-price {
+    width: 110px;
+}
+
+.header-volume {
+    width: 200px;
+}
+
+.header-marketcap {
+    width: 240px;
+}
+
+.header-percent {
+    width: 80px;
+}

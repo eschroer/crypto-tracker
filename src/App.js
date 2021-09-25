@@ -2,6 +2,7 @@
 import {useState, useEffect} from 'react'
 import './App.css';
 import Coin from './Coin';
+import Header from './Header';
 import axios from 'axios'
 
 
@@ -33,6 +34,7 @@ function App() {
           <input type="text" placeholder="Search"
           className="coin-input" onChange={handleChange}/>
         </form>
+        <Header/>
       </div>
       {filteredCoins.map(coin => {
         return (
