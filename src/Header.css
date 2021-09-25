@@ -26,7 +26,7 @@
 }
 
 .header-symbol {
-    width: 110px;
+    width: 60px;
     
 }
 
@@ -34,7 +34,7 @@
     display: flex;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around; 
     width: 100%;
 }
 
@@ -43,13 +43,29 @@
 }
 
 .header-volume {
-    width: 200px;
+    width: 160px;
 }
 
 .header-marketcap {
-    width: 240px;
+    width: 150px;
+    margin-left: 10px;
 }
 
 .header-percent {
     width: 80px;
+}
+.button{
+    border: none;
+    display: list-item;
+    position: relative;
+    background-color: #4801ff;
+    border-radius: 20px;
+    justify-content: left;
+    width: 20px;
+    margin: none;
+    
+
+}
+.button:hover{
+    cursor: pointer;
 }

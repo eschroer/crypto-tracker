@@ -11,6 +11,7 @@ function App() {
   
   const [coins, setCoins] = useState([])
   const [search, setSearch] = useState('')
+  const [sortConfig, setConfig] = useState({})
 
   useEffect(()=> {
     axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
@@ -24,6 +25,24 @@ function App() {
     setSearch(e.target.value)
   }
 
+  const sortedCoins = coins.sort((a, b) => {
+    if (a[sortConfig.key] < b[sortConfig.key]) {
+      return sortConfig.direction === 'ascending' ? -1 : 1;
+    }
+    if (a[sortConfig.key] > b[sortConfig.key]) {
+      return sortConfig.direction === 'ascending' ? 1 : -1;
+    }
+    return 0;
+  });
+
+  const requestSort = key => {
+    let direction = 'ascending';
+    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending';
+    }
+    setConfig({ key, direction });
+  }
+  
   const filteredCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()))
 
   return (
@@ -34,7 +53,8 @@ function App() {
           <input type="text" placeholder="Search"
           className="coin-input" onChange={handleChange}/>
         </form>
-        <Header/>
+        <Header requestSort={requestSort}
+        sortConfig={sortConfig}/>
       </div>
       {filteredCoins.map(coin => {
         return (
